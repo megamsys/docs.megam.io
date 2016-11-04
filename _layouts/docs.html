@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{% assign collection = site.collections | where: "label", page.collection | first %}
+
+<section class="main">
+	<div class="page-header">
+		<h2>{{ collection.title | default: "Change Log" }}</h2>
+		<h3>{% if page.heading %}{{ page.heading }}{% else %}{{ page.title }}{% endif %}</h3>
+	</div>
+	<article class="content">
+		{% assign requirements = "" %}
+
+		{% if page.requirements.build == 'vertice' %}
+			{% assign requirements = requirements | append: '' %}
+		{% endif %}
+
+		{% if page.requirements.plan == 'free' %}
+			{% assign requirements = requirements | append: ' on the **Open Source** plans' %}
+		{% elsif page.requirements.plan == 'enterprise' %}
+			{% assign requirements = requirements | append: ' on the **Enterprise** plan' %}
+		{% endif %}
+
+		{% if requirements != "" %}
+			<p class="info">Available {{ requirements | append: '.' | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+		{% endif %}
+
+		<div>{{ content }}</div>
+	</article>
+</section>
+
+<script>{% include anchor-links.js %}</script>
