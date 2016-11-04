@@ -44,7 +44,7 @@ $ wget -O centos_7.1.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub
 
 $ wget -O coreos_latest.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/coreos_latest.tar.gz
 
-$ wget -O dockermachine_1.12.1.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/dockermachine_23.img.tar.gz
+$ wget -O dockermachine_1.12.1.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/dockermachine.tar.gz
 
 
 $ tar -zxvf ubuntu_14.04.img.tar.gz ubuntu_14.04.img
