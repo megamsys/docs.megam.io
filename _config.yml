@@ -70,12 +70,6 @@ collections:
     active_prefix: domains
     output: true
     order: 9
-  ssl:
-    title: SSL
-    permalink: /ssl/:title/
-    active_prefix: ssl
-    output: true
-    order: 10
 
 defaults:
 - scope:
