@@ -1,0 +1,27 @@
+---
+layout: page
+title: Release Notes
+heading: Release Notes
+section: Documentation
+permalink: /releasenotes/
+---
+
+{% include versions_bulb.md %}
+
+<p>Register in the <a href="https://forum.megam.io">forum</a> to keep up with the latest changes.</p>
+
+<div class="changelog">
+	{% for change in site.posts %}
+		<hr>
+		<div class="changelog-item">
+			<h3><a href="{{ change.url }}">{{ change.title }}</a>
+			</h3>
+			<p>
+				<button type="btn btn-sm" class="btn btn-info"><b>{{ change.tags }}</b>
+				</button>
+				<span class="date">{{ change.date | date: "%B %d, %Y" }}</span>
+				<span class="badge {{ change.type }}">{{ change.type }}</span></p>
+			{{ change.content }}
+		</div>
+	{% endfor %}
+</div>

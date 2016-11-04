@@ -1,0 +1,84 @@
+name: Vertice Documentation
+version: 1.5.1
+url: https://docs.megam.io
+future: true
+timezone:  Asia/Kolkatta
+
+author:
+  name: Megam Humans
+  email: humans@megam.io
+
+builds:
+  - vertice
+
+plans:
+  - free
+  - enterprise
+
+collections:
+  overview:
+    title: Overview
+    permalink: /overview/:title/
+    active_prefix: overview
+    output: true
+    order: 1
+  gettingstarted:
+    title: Getting Started
+    permalink: /gettingstarted/:title/
+    active_prefix: gettingstarted
+    output: true
+    order: 2
+  installation:
+    title: Installation
+    permalink: /installation/:title/
+    active_prefix: installation
+    output: true
+    order: 3
+  configuration:
+    title: Configuration
+    permalink: /configuration/:title/
+    active_prefix: configuration
+    output: true
+    order: 4
+  machines:
+    title: Machines
+    permal`ink: /machines/:title/
+    active_prefix: machines
+    output: true
+    order: 5
+  prepackagedapps:
+    title: Prepackaged Apps
+    permalink: /prepackagedapps/:title/
+    active_prefix: prepackagedapps
+    output: true
+    order: 6
+  customapps:
+    title: Custom Apps
+    permalink: /customapps/:title/
+    active_prefix: customapps
+    output: true
+    order: 7
+  containers:
+    title: Containers
+    permalink: /containers/:title/
+    active_prefix: containers
+    output: true
+    order: 8
+  domains:
+    title: Domains
+    permalink: /domains/:title/
+    active_prefix: domains
+    output: true
+    order: 9
+  ssl:
+    title: SSL
+    permalink: /ssl/:title/
+    active_prefix: ssl
+    output: true
+    order: 10
+
+defaults:
+- scope:
+    path: ""
+  values:
+    layout: docs
