@@ -65,7 +65,7 @@ $ su -c yum install java-1.8.0-openjdk
 
 #### Cassandra 3.7
 
-Install cassandra by following the link for your operating system.
+Install cassandra 3.7 by following the link for your operating system.
 
 
 | Operating System             | Link                                                                                        |
@@ -89,6 +89,34 @@ $ sudo apt-get update
 $ sudo apt-get install datastax-ddc
 
 ~~~
+
+##### Enable access using *private_ip*
+
+Open the file */etc/cassandra/cassandra.yaml* in your favourite EDITOR.
+
+Lets use *nano*
+
+~~~bash
+
+$ nano  /etc/cassandra/cassandra.yaml
+
+~~~
+
+- Change *listen_address* to *private_ip*
+
+- Change *rpc_address* to *private_ip*
+
+- Change *seeds* to *private_ip*
+
+
+Restart the cassandra (in all operating systems)
+
+~~~bash
+
+$ service cassandra restart
+
+~~~
+
 
 
 ##### Enable password-auth in cassandra
@@ -146,7 +174,7 @@ $ service cassandra restart
 
   sudo apt-get update
 
-  sudo apt-get install verticenilavu verticegateway verticensq vertice verticevnc
+  sudo apt-get install verticenilavu verticegateway verticensqd vertice verticevnc
 
 ~~~
 
@@ -154,13 +182,19 @@ To start MegamVertice then
 
 ~~~bash
 
-  sudo start  verticensq
+  sudo start  nsqd
+
+  sudo start nsqadmin
+
+  sudo start nsqlookupd
 
   sudo start  verticegateway
 
   sudo start  verticevnc
 
   sudo start  vertice
+
+  sudo sv start nginx
 
   sudo sv start unicorn
 
@@ -170,13 +204,19 @@ To stop MegamVertice then
 
 ~~~bash
 
-  sudo stop  verticensq
+  sudo stop  nsqd
+
+  sudo stop nsqadmin
+
+  sudo stop nsqlookupd
 
   sudo stop  verticegateway
 
   sudo stop  verticevnc
 
   sudo stop  vertice
+
+  sudo sv stop nginx
 
   sudo sv stop unicorn
 
@@ -192,7 +232,7 @@ To stop MegamVertice then
 
   sudo apt-get update
 
-  sudo apt-get install verticenilavu verticegateway verticensq vertice verticevnc
+  sudo apt-get install verticenilavu verticegateway verticensqd vertice verticevnc
 
 ~~~
 
@@ -200,13 +240,19 @@ To start MegamVertice
 
 ~~~bash
 
-  sudo systemctl start  verticensq
+  sudo systemctl start  nsqd
+
+  sudo systemctl start nsqadmin
+
+  sudo systemctl start nsqlookupd
 
   sudo systemctl start  verticegateway
 
   sudo systemctl start  verticevnc
 
   sudo systemctl start vertice
+
+  sudo sv start nginx
 
   sudo sv start unicorn
 
@@ -216,13 +262,19 @@ To stop MegamVertice
 
 ~~~bash
 
-  sudo systemctl stop  verticensq
+  sudo systemctl stop  nsqd
+
+  sudo systemctl stop  nsqadmin
+
+  sudo systemctl stop  nsqlookupd
 
   sudo systemctl stop  verticegateway
 
   sudo systemctl stop  verticevnc
 
   sudo systemctl stop  vertice
+
+  sudo sv stop nginx
 
   sudo sv stop unicorn
 
@@ -235,7 +287,51 @@ To stop MegamVertice
 
   sudo yum update
 
-  sudo yum install verticenilavu verticegateway verticensq vertice verticevnc
+  sudo yum install verticenilavu verticegateway verticensqd vertice verticevnc
+
+~~~
+
+To start MegamVertice
+
+~~~bash
+
+  sudo systemctl start  nsqd
+
+  sudo systemctl start nsqadmin
+
+  sudo systemctl start nsqlookupd
+
+  sudo systemctl start  verticegateway
+
+  sudo systemctl start  verticevnc
+
+  sudo systemctl start vertice
+
+  sudo sv start nginx
+
+  sudo sv start unicorn
+
+~~~
+
+To stop MegamVertice
+
+~~~bash
+
+  sudo systemctl stop  nsqd
+
+  sudo systemctl stop  nsqadmin
+
+  sudo systemctl stop  nsqlookupd
+
+  sudo systemctl stop  verticegateway
+
+  sudo systemctl stop  verticevnc
+
+  sudo systemctl stop  vertice
+
+  sudo sv stop nginx
+
+  sudo sv stop unicorn
 
 ~~~
 
