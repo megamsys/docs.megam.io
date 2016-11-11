@@ -59,7 +59,9 @@ $ sudo /usr/sbin/update-java-alternatives -s java-1.8.0-openjdk-amd64
 
 ~~~bash
 
-$ su -c yum install java-1.8.0-openjdk
+$ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.rpm"
+
+$ rpm -ivh jdk-8u45-linux-x64.rpm
 
 ~~~
 
@@ -168,7 +170,7 @@ $ service cassandra restart
 
 ~~~bash
 
-  sudo apt-add-repository "deb [arch=amd64] https://get.megam.io/repo/1.5/ubuntu/14.04/stable trusty stable"
+  sudo apt-add-repository "deb [arch=amd64] http://get.megam.io/repo/1.5/ubuntu/14.04/stable trusty stable"
 
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
 
@@ -182,17 +184,17 @@ To start MegamVertice then
 
 ~~~bash
 
-  sudo start  nsqd
+  sudo start nsqd
 
   sudo start nsqadmin
 
   sudo start nsqlookupd
 
-  sudo start  verticegateway
+  sudo start verticegateway
 
-  sudo start  verticevnc
+  sudo start verticevnc
 
-  sudo start  vertice
+  sudo start vertice
 
   sudo sv start nginx
 
@@ -204,17 +206,17 @@ To stop MegamVertice then
 
 ~~~bash
 
-  sudo stop  nsqd
+  sudo stop nsqd
 
   sudo stop nsqadmin
 
   sudo stop nsqlookupd
 
-  sudo stop  verticegateway
+  sudo stop verticegateway
 
-  sudo stop  verticevnc
+  sudo stop verticevnc
 
-  sudo stop  vertice
+  sudo stop vertice
 
   sudo sv stop nginx
 
@@ -226,7 +228,7 @@ To stop MegamVertice then
 
 ~~~bash
 
-  sudo apt-add-repository "deb [arch=amd64] http://get.megam.io/repo/1.5/ubuntu/16.04/stable xenial stable"
+  sudo apt-add-repository "deb [arch=amd64] https://get.megam.io/repo/1.5/ubuntu/16.04/stable xenial stable"
 
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
 
@@ -240,15 +242,15 @@ To start MegamVertice
 
 ~~~bash
 
-  sudo systemctl start  nsqd
+  sudo systemctl start nsqd
 
   sudo systemctl start nsqadmin
 
   sudo systemctl start nsqlookupd
 
-  sudo systemctl start  verticegateway
+  sudo systemctl start verticegateway
 
-  sudo systemctl start  verticevnc
+  sudo systemctl start verticevnc
 
   sudo systemctl start vertice
 
@@ -262,17 +264,17 @@ To stop MegamVertice
 
 ~~~bash
 
-  sudo systemctl stop  nsqd
+  sudo systemctl stop nsqd
 
-  sudo systemctl stop  nsqadmin
+  sudo systemctl stop nsqadmin
 
-  sudo systemctl stop  nsqlookupd
+  sudo systemctl stop nsqlookupd
 
-  sudo systemctl stop  verticegateway
+  sudo systemctl stop verticegateway
 
-  sudo systemctl stop  verticevnc
+  sudo systemctl stop verticevnc
 
-  sudo systemctl stop  vertice
+  sudo systemctl stop vertice
 
   sudo sv stop nginx
 
@@ -285,6 +287,14 @@ To stop MegamVertice
 
 ~~~bash
 
+  cat << EOT > /etc/yum.repos.d/vertice.repo
+  [vertice]
+  name=vertice
+  baseurl=https://get.megam.io/repo/1.5/centos/7.2/stable
+  enabled=1
+  gpgcheck=0
+  EOT
+
   sudo yum update
 
   sudo yum install verticenilavu verticegateway verticensqd vertice verticevnc
@@ -295,15 +305,15 @@ To start MegamVertice
 
 ~~~bash
 
-  sudo systemctl start  nsqd
+  sudo systemctl start nsqd
 
   sudo systemctl start nsqadmin
 
   sudo systemctl start nsqlookupd
 
-  sudo systemctl start  verticegateway
+  sudo systemctl start verticegateway
 
-  sudo systemctl start  verticevnc
+  sudo systemctl start verticevnc
 
   sudo systemctl start vertice
 
@@ -317,17 +327,17 @@ To stop MegamVertice
 
 ~~~bash
 
-  sudo systemctl stop  nsqd
+  sudo systemctl stop nsqd
 
-  sudo systemctl stop  nsqadmin
+  sudo systemctl stop nsqadmin
 
-  sudo systemctl stop  nsqlookupd
+  sudo systemctl stop nsqlookupd
 
-  sudo systemctl stop  verticegateway
+  sudo systemctl stop verticegateway
 
-  sudo systemctl stop  verticevnc
+  sudo systemctl stop verticevnc
 
-  sudo systemctl stop  vertice
+  sudo systemctl stop vertice
 
   sudo sv stop nginx
 
