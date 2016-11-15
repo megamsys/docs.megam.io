@@ -17,9 +17,9 @@ At the start, install OpenJDK8 and cassandra for which the following are needed.
 
 ---
 
-#### OpenJDK8
+#### Ubuntu 14.04
 
-##### Ubuntu 14.04
+##### OpenJDK8
 
 ~~~bash
 
@@ -31,15 +31,15 @@ $ sudo apt-get -y install openjdk-8-jdk
 
 ~~~
 
-#### Ruby2.3
+##### Ruby2.3
 
 ~~~bash
 
- $ sudo apt-add-repository ppa:brightbox/ruby-ng
+$ sudo apt-add-repository ppa:brightbox/ruby-ng
 
- $ sudo apt-get update
+$ sudo apt-get -y update
 
- $ sudo apt-get install ruby2.3 ruby2.3-dev
+$ sudo apt-get -y install ruby2.3 ruby2.3-dev
 
 ~~~
 
