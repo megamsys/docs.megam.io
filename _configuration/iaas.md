@@ -55,6 +55,8 @@ Configure */var/lib/megam/vertice/vertice.conf*
                 enabled = true
                 #opennebula cluster
                 cluster_id = "101"
+                # storage type of node such hdd/ssd
+                storage_hddtype = "hdd"     
                 # opennebula virtual network configured
                 vnet_pri_ipv4   = "pri_ipv4"
                 vnet_pub_ipv4   = "pub2_ipv4"
@@ -65,6 +67,7 @@ Configure */var/lib/megam/vertice/vertice.conf*
               [[deployd.one.region.cluster]]
                 enabled = true
                 cluster_id = "100"
+                storage_hddtype = "ssd"  
                 vnet_pri_ipv4   = "pri_ipv4-a"
                 vnet_pub_ipv4   = "pub_ipv4-a"
                 vnet_pri_ipv6   = "pri_ipv6-a"
@@ -72,8 +75,8 @@ Configure */var/lib/megam/vertice/vertice.conf*
 
            #one or more regions can be added
           [[deployd.one.region]]
-            one_zone = "sydney2"
-            one_endpoint = "http://local:2633/RPC2"
+            one_zone = "sydney"
+            one_endpoint = "http://127.0.0.1:2633/RPC2"
             one_user     = "oneadmin"
             one_password = "onepass"
             one_template = "megam"
@@ -82,6 +85,7 @@ Configure */var/lib/megam/vertice/vertice.conf*
               [[deployd.one.region.cluster]]
                 enabled = true
                 cluster_id = "103"
+                storage_hddtype = "ssd"
                 vnet_pri_ipv4   = "pri_ipv4-a"
                 vnet_pub_ipv4   = "pub_ipv4-a"
                 vnet_pri_ipv6   = "pri_ipv6-a"
@@ -91,6 +95,7 @@ Configure */var/lib/megam/vertice/vertice.conf*
               [[deployd.one.region.cluster]]
                 enabled = true
                 cluster_id = "104"
+                storage_hddtype = "hdd"
                 vnet_pri_ipv4   = "pri_ipv4-b"
                 vnet_pub_ipv4   = "pub_ipv4-b"
                 vnet_pri_ipv6   = "pri_ipv6-b"
