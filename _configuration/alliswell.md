@@ -16,7 +16,7 @@ Now that you have configured to your hearts content, its time to see if the `ind
 
 You'll see a cool UI.
 
-The log files are located in */var/www/verticenilavu/log/unicorn*.log
+The log files are located in */var/www/verticenilavu/log/unicorn.stdout.log
 
 
 ### API - gateway
