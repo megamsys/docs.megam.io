@@ -30,11 +30,13 @@ To do this, download  and untar the images as per the instructions given below:
 
 ~~~bash
 
-$ wget -O ubuntu_14.04.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/ubuntu14.tar.gz
-
 $ wget -O ubuntu_16.04.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/ubuntu_16.04.tar.gz
 
 $ wget -O megam.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/megam.tar.gz
+
+$ wget -O coreos_latest.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/coreos_latest.tar.gz
+
+$ wget -O ubuntu_14.04.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/ubuntu14.tar.gz
 
 $ wget -O fedora_24.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/fedora.tar.gz
 
@@ -42,26 +44,29 @@ $ wget -O debian_8.5.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub
 
 $ wget -O centos_7.1.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/centos.tar.gz
 
-$ wget -O coreos_latest.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/coreos_latest.tar.gz
+$ wget -O dockermachine_1.12.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/dockermachine.tar.gz
 
-$ wget -O dockermachine_1.12.1.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/dockermachine.tar.gz
-
-
-$ tar -zxvf ubuntu_14.04.img.tar.gz ubuntu_14.04.img
 
 $ tar -zxvf ubuntu_16.04.img.tar.gz ubuntu_16.04.img
 
 $ tar -zxvf megam.img.tar.gz megam.img
 
-$ tar -zxvf fedora_24.img.tar.gz fedora_24.img
+$ tar -zxvf coreos_latest.img.tar.gz
 
-$ tar -zxvf debian_8.5.img.tar.gz debian_8.5.img
+$ tar -zxvf ubuntu_14.04.img.tar.gz
+mv ubuntu14.img ubuntu_14.04.img
 
-$ tar -zxvf centos_7.1.img.tar.gz centos_7.1.img
+$ tar -zxvf fedora_24.img.tar.gz
+mv fedora.img fedora_24.img
 
-$ tar -zxvf coreos_latest.img.tar.gz coreos_latest.img
+$ tar -zxvf debian_8.5.img.tar.gz
+mv debian.img debian_8.5.img
 
-$ tar -zxvf dockermachine.1.12.1.img.tar.gz dockermachine_1.12.1.img
+$ tar -zxvf centos_7.1.img.tar.gz
+mv centos.img centos_7.1.img
+
+$ tar -zxvf dockermachine.1.12.img.tar.gz
+mv dockermachine.img dockermachine.1.12.img
 
 ~~~
 

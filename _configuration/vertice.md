@@ -23,6 +23,7 @@ The following are the main components which are to be changed:
 The main options to change are in the following files:
 
 1. Change details for the UI               */var/lib/megam/nilavu.conf*
+*/etc/nginx/conf.d/nilavu.conf*
 2. Change details for the API              */var/lib/megam/verticegateway/gateway.conf*
 3. Change details for the Omni scheduler   */var/lib/megam/vertice/vertice.conf*
 
@@ -33,6 +34,22 @@ Go to
 $ cd /var/lib/megam
 
 ```
+
+Configure */etc/nginx/conf.d/nilavu.conf*
+{: .info}
+
+*/etc/nginx/conf.d/nilavu.conf*
+
+~~~yaml
+
+## nilavu UI that connect to
+
+upstream nilavu {
+  server localhost:8080;
+}
+
+~~~
+
 
 Configure */var/lib/megam/nilavu.conf*
 {: .info}
@@ -94,6 +111,82 @@ nsq.events.muted = false
 nsq.events.muted_emails = ["tour@megam.io"]
 
 ~~~
+
+Import *Vertice Keyspace in Cassandra*
+{: .info}
+
+Update the keyspace in Cassandra
+
+To do this, download  the following cql files:
+
+~~~bash
+
+wget -O base.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5/db/base.cql
+wget -O upgrade.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5/db/1.5.cql
+wget -O enterprise.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5/db/ee.cql
+
+~~~
+
+~~~bash
+
+Update base.cql file in cassandra. Change localhost to your private_ip
+
+ cqlsh localhost -f base.cql
+
+~~~
+
+Enable *password-auth in cassandra*
+{: .info}
+
+Open the file */etc/cassandra/cassandra.yaml* in your favourite EDITOR.
+
+Lets use *nano*
+
+~~~bash
+
+$ nano  /etc/cassandra/cassandra.yaml
+
+~~~
+
+- Change authenticator  “AllowAllAuthenticator” to “PasswordAuthenticator”.
+
+- Change authorizer “AllowAllAuthorizer” to “CassandraAuthorizer”
+
+~~~yaml
+
+  # - AllowAllAuthenticator performs no checks - set it to disable authentication.
+  # - PasswordAuthenticator relies on username/password pairs to authenticate
+  #   users. It keeps usernames and hashed passwords in system_auth.credentials table.
+  #   Please increase system_auth keyspace replication factor if you use this authenticator.
+  #   If using PasswordAuthenticator, CassandraRoleManager must also be used (see below)
+  authenticator: PasswordAuthenticator
+
+  # - AllowAllAuthorizer allows any action to any user - set it to disable authorization.
+  # - CassandraAuthorizer stores permissions in system_auth.permissions table. Please
+  #   increase system_auth keyspace replication factor if you use this authorizer.
+  authorizer: CassandraAuthorizer
+
+~~~
+
+
+Restart the cassandra (in all operating systems)
+
+~~~bash
+
+$ service cassandra restart
+
+~~~
+
+~~~bash
+
+Upgrade the cql file using cassandra username and password. change localhost to your private_ip
+
+cqlsh localhost vertadmin vertadmin -f upgrade.cql
+
+cqlsh localhost vertadmin vertadmin -f enterprise.cql
+
+~~~
+
 
 Configure */var/lib/megam/vertice/vertice.conf*
 {: .info}

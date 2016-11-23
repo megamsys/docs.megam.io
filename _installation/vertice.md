@@ -133,49 +133,6 @@ $ service cassandra restart
 
 ~~~
 
-
-
-##### Enable password-auth in cassandra
-
-Open the file */etc/cassandra/cassandra.yaml* in your favourite EDITOR.
-
-Lets use *nano*
-
-~~~bash
-
-$ nano  /etc/cassandra/cassandra.yaml
-
-~~~
-
-- Change authenticator  “AllowAllAuthenticator” to “PasswordAuthenticator”.
-
-- Change authorizer “AllowAllAuthorizer” to “CassandraAuthorizer”
-
-~~~yaml
-
-  # - AllowAllAuthenticator performs no checks - set it to disable authentication.
-  # - PasswordAuthenticator relies on username/password pairs to authenticate
-  #   users. It keeps usernames and hashed passwords in system_auth.credentials table.
-  #   Please increase system_auth keyspace replication factor if you use this authenticator.
-  #   If using PasswordAuthenticator, CassandraRoleManager must also be used (see below)
-  authenticator: PasswordAuthenticator
-
-  # - AllowAllAuthorizer allows any action to any user - set it to disable authorization.
-  # - CassandraAuthorizer stores permissions in system_auth.permissions table. Please
-  #   increase system_auth keyspace replication factor if you use this authorizer.
-  authorizer: CassandraAuthorizer
-
-~~~
-
-
-Restart the cassandra (in all operating systems)
-
-~~~bash
-
-$ service cassandra restart
-
-~~~
-
 ---
 
 ### Install OpenSource MegamVertice
