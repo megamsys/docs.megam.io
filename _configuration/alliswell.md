@@ -16,7 +16,7 @@ Now that you have configured to your hearts content, its time to see if the `ind
 
 You'll see a cool UI.
 
-The log files are located in */var/log/verticenilavu/unicorn.log*
+The log files are located in */var/www/verticenilavu/log/unicorn*.log
 
 
 ### API - gateway
@@ -42,7 +42,7 @@ The log files are located in */var/log/verticenilavu/unicorn.log*
 }
 ~~~
 
-The log files are located in  */var/log/verticegateway/*
+The log files are located in  */var/log/megam/verticegateway/*
 
 
 ### Omnischeduler
@@ -51,7 +51,7 @@ The log files are located in  */var/log/verticegateway/*
 
 You'll see a web page.
 
-The log files are located in */var/log/vertice*
+The log files are located in */var/log/megam/vertice*
 
 #### *optional* Cassandra
 
