@@ -43,7 +43,6 @@ $ sudo apt-get -y install ruby2.3 ruby2.3-dev
 
 ~~~
 
-
 ##### Ubuntu 16.04
 
 ~~~bash
@@ -70,13 +69,13 @@ $ sudo /usr/sbin/update-java-alternatives -s java-1.8.0-openjdk-amd64
 
 ##### CentOS 7.2
 
+##### OpenJDK8
+
 ~~~bash
 
 $ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.rpm"
 
 $ rpm -ivh jdk-8u45-linux-x64.rpm
-
-~~~
 
 #### Cassandra 3.7
 
@@ -189,7 +188,7 @@ $ service cassandra restart
 
   sudo apt-get update
 
-  sudo apt-get install verticenilavu verticegateway verticensqd vertice verticevnc
+  sudo apt-get install verticenilavu verticegateway nsqd vertice verticevnc
 
 ~~~
 
@@ -247,7 +246,7 @@ To stop MegamVertice then
 
   sudo apt-get update
 
-  sudo apt-get install verticenilavu verticegateway verticensqd vertice verticevnc
+  sudo apt-get install verticenilavu verticegateway nsqd vertice verticevnc
 
 ~~~
 
@@ -298,6 +297,31 @@ To stop MegamVertice
 
 #### CentOS 7.2 *experimental*
 
+At the start, install Ruby2.3 and Runit for VerticeNilavu.
+
+~~~
+
+##### Ruby2.3
+
+~~~bash
+
+$ wget https://github.com/feedforce/ruby-rpm/releases/download/2.3.1/ruby-2.3.1-1.el7.centos.x86_64.rpm
+
+$ sudo yum install -y libyaml
+
+$ sudo rpm -ivh ruby-2.3.1-1.el7.centos.x86_64.rpm
+
+~~~
+##### Runit
+
+~~~bash
+
+$ curl -s https://packagecloud.io/install/repositories/imeyer/runit/script.rpm.sh | sudo bash
+
+$ sudo yum install -y runit-2.1.1-7.el7.centos.x86_64
+
+~~~
+
 ~~~bash
 
   cat << EOT > /etc/yum.repos.d/vertice.repo
@@ -310,7 +334,7 @@ To stop MegamVertice
 
   sudo yum update
 
-  sudo yum install verticenilavu verticegateway verticensqd vertice verticevnc
+  sudo yum install verticenilavu verticegateway nsqd vertice verticevnc
 
 ~~~
 
@@ -329,6 +353,12 @@ To start MegamVertice
   sudo systemctl start verticevnc
 
   sudo systemctl start vertice
+
+  if sv service does not start to run the following command 
+
+  runsvdir /var/service &
+
+  then do this
 
   sudo sv start nginx
 
