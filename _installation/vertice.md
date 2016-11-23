@@ -301,7 +301,6 @@ To stop MegamVertice
 
 At the start, install Ruby2.3 and Runit for VerticeNilavu.
 
-
 ##### Ruby2.3
 
 ~~~bash
@@ -326,12 +325,12 @@ $ sudo yum install -y runit-2.1.1-7.el7.centos.x86_64
 ~~~bash
 
   cat << EOT > /etc/yum.repos.d/vertice.repo
-  [vertice]
-  name=vertice
-  baseurl=https://get.megam.io/repo/1.5/centos/7.2/stable
-  enabled=1
-  gpgcheck=0
-  EOT
+[vertice]
+name=vertice
+baseurl=https://get.megam.io/repo/1.5/centos/7.2/stable
+enabled=1
+gpgcheck=0
+EOT
 
   sudo yum update
 
