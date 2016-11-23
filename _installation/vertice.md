@@ -77,6 +77,8 @@ $ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%
 
 $ rpm -ivh jdk-8u45-linux-x64.rpm
 
+~~~  
+
 #### Cassandra 3.7
 
 Install cassandra 3.7 by following the link for your operating system.
@@ -299,7 +301,6 @@ To stop MegamVertice
 
 At the start, install Ruby2.3 and Runit for VerticeNilavu.
 
-~~~
 
 ##### Ruby2.3
 
@@ -354,7 +355,7 @@ To start MegamVertice
 
   sudo systemctl start vertice
 
-  if sv service does not start to run the following command 
+  if sv service does not start to run the following command
 
   runsvdir /var/service &
 
