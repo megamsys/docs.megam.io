@@ -311,11 +311,7 @@ To start MegamVertice
 
   sudo systemctl start vertice
 
-  if sv service does not start to run the following command
-
   runsvdir /var/service &
-
-  then do this
 
   sudo sv start nginx
 
