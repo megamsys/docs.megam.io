@@ -181,9 +181,9 @@ $ service cassandra restart
 
 Upgrade the cql file using cassandra username and password. change localhost to your private_ip
 
-cqlsh localhost vertadmin vertadmin -f upgrade.cql
+cqlsh localhost -u vertadmin -p vertadmin -f upgrade.cql
 
-cqlsh localhost vertadmin vertadmin -f enterprise.cql
+cqlsh localhost -u vertadmin -p vertadmin -f enterprise.cql
 
 ~~~
 
