@@ -34,6 +34,8 @@ $ wget -O ubuntu_16.04.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megamp
 
 $ wget -O megam.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/megam.tar.gz
 
+$ wget -O centos_6.8.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/centos_6.8.tar.gz
+
 $ wget -O coreos_latest.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/coreos_latest.tar.gz
 
 $ wget -O ubuntu_14.04.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/ubuntu14.tar.gz
@@ -47,9 +49,11 @@ $ wget -O centos_7.1.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub
 $ wget -O dockermachine_1.12.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/dockermachine.tar.gz
 
 
-$ tar -zxvf ubuntu_16.04.img.tar.gz ubuntu_16.04.img
+$ tar -zxvf ubuntu_16.04.img.tar.gz
 
-$ tar -zxvf megam.img.tar.gz megam.img
+$ tar -zxvf megam.img.tar.gz
+
+$ tar -zxvf centos_6.8.img.tar.gz
 
 $ tar -zxvf coreos_latest.img.tar.gz
 
