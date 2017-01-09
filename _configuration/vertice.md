@@ -23,9 +23,9 @@ The following are the main components which are to be changed:
 The main options to change are in the following files:
 
 1. Change details for the UI               */var/lib/megam/nilavu.conf*
-*/etc/nginx/conf.d/nilavu.conf*
-2. Change details for the API              */var/lib/megam/verticegateway/gateway.conf*
-3. Change details for the Omni scheduler   */var/lib/megam/vertice/vertice.conf*
+2. Change SSL certificate to enable HTTPS  */etc/nginx/sites-available/default*
+3. Change details for the API              */var/lib/megam/verticegateway/gateway.conf*
+4. Change details for the Omni scheduler   */var/lib/megam/vertice/vertice.conf*
 
 Go to
 
@@ -34,22 +34,6 @@ Go to
 $ cd /var/lib/megam
 
 ```
-
-Configure */etc/nginx/conf.d/nilavu.conf*
-{: .info}
-
-*/etc/nginx/conf.d/nilavu.conf*
-
-~~~yaml
-
-## nilavu UI that connect to
-
-upstream nilavu {
-  server localhost:8080;
-}
-
-~~~
-
 
 Configure */var/lib/megam/nilavu.conf*
 {: .info}
@@ -65,12 +49,34 @@ Configure */var/lib/megam/nilavu.conf*
 http_api = http://localhost:9000/v2
 
 ## log streamer that the UI will connect to.
+## we need to turn on https, in such case replace it as wss
 
 log_server = ws://localhost:7777/logs
 
 ### vnc server that the UI will connect to.
+## we need to turn on https, in such case replace it as wss
 
 vnc_server = ws://localhost:8000
+
+## we need to turn on https, in such case replace it as https
+google_js_uri = http://www.google.com/jsapi?ext.js
+
+~~~
+
+Configure */etc/nginx/sites-available/default*
+{: .info}
+
+~~~yaml
+
+## change server_name to point your server_name
+server_name _;
+
+Enable *HTTPS in Vertice*
+{: .info}
+
+##uncomment SSL certificate to point your own SSL certificate
+  ssl_certificate /etc/nginx/certs/cloud.atomdeploy.com.cer;
+  ssl_certificate_key /etc/nginx/private/cloud.atomdeploy.com.key;
 
 ~~~
 
