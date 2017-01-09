@@ -73,7 +73,6 @@ server_name _;
 
 ~~~
 
-
 Enable *HTTPS in Vertice*
 {: .info}
 
