@@ -49,10 +49,12 @@ Configure */var/lib/megam/nilavu.conf*
 http_api = http://localhost:9000/v2
 
 ## log streamer that the UI will connect to.
+## we need to turn on https, in such case replace it as wss
 
 log_server = ws://localhost:7777/logs
 
 ### vnc server that the UI will connect to.
+## we need to turn on https, in such case replace it as wss
 
 vnc_server = ws://localhost:8000
 
