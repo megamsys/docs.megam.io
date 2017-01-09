@@ -71,6 +71,9 @@ Configure */etc/nginx/sites-available/default*
 ## change server_name to point your server_name
 server_name _;
 
+~~~
+
+
 Enable *HTTPS in Vertice*
 {: .info}
 
