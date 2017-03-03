@@ -27,17 +27,16 @@ permalink: /pricing
 
 ### Public Cloud Editions (Licensed)
 
-|                                                 | VirtEngine Minified edition                             | VirtEngine Complete edition                                                             |
+|                                                 | Vertice Minified edition                             | Vertice Complete edition                                                             |
 | ----------------------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-
-| Cloud Virtual Machines                          | ![Supported](img/tick.png)                           | ![Supported](img/tick.png)                                                           |
-| One-Click Applications                          | ![Supported](img/tick.png)                           | ![Supported](img/tick.png)                                                           |
-| Extendable Platform                             | ![Supported](img/tick.png)                           | ![Supported](img/tick.png)                                                           |
-| Simple Storage Service (Block/Object)           | -                                                       | ![Supported](img/tick.png)                                                           |
+| Cloud Virtual Machines                          | ![Supported](/img/tick.png)                           | ![Supported](/img/tick.png)                                                           |
+| One-Click Applications                          | ![Supported](/img/tick.png)                           | ![Supported](/img/tick.png)                                                           |
+| Extendable Platform                             | ![Supported](/img/tick.png)                           | ![Supported](/img/tick.png)                                                           |
+| Simple Storage Service (Block/Object)           | -                                                       | ![Supported](/img/tick.png)                                                           |
 | Elastic Virtual Machines                        | -                                                       | soon                                                                                    |
-| Cloud-Native Applications                       | -                                                       | ![Supported](img/tick.png)                                                           |
+| Cloud-Native Applications                       | -                                                       | ![Supported](/img/tick.png)                                                           |
 | Automated Application Scaling (Load Balancing)  | -                                                       | soon                                                                                    |
-| Micro-Services Docker                           | -                                                       | ![Supported](img/tick.png)                                                           |
+| Micro-Services Docker                           | -                                                       | ![Supported](/img/tick.png)                                                           |
 | Virtual Private Cloud                           | -                                                       | soon                                                                                    |
 | Customizable UI                                 | -                                                       | ![Supported](img/tick.png)                                                           |
 | Increased Publicity & Sales                     | -                                                       | Offer Cloud Bursting - Mentioned in Providers Section - Integrated with 3rd party tools |
