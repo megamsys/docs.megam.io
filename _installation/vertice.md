@@ -12,7 +12,7 @@ At the start, install OpenJDK8 and cassandra for which the following are needed.
 | Operating System                        | Status                                                |
 |:-------------------------------------- :| :---------------------------------------------------- |
 | Ubuntu 14.04, 16.04, Debian 8.5         | Well tested                                           |
-| CentOS 7.2                              | *experimental*, [report issues](https://github.com/megamsys/gitpackager){: target="_blank"} |
+| CentOS 7.2                              | Well tested, [report issues](https://github.com/megamsys/gitpackager){: target="_blank"} |
 
 
 ---
@@ -112,9 +112,9 @@ Restart the cassandra (in all operating systems)
 
 $ service cassandra restart
 
-Lets follow this link *http://docs.megam.io/configuration/vertice/#Import-Vertice-Keyspace* to update Vertice keyspace & password authentincation in cassandra.
-
 ~~~
+
+Lets follow this link *http://docs.megam.io/configuration/vertice/#import-vertice-keyspace* to update Vertice keyspace & password authentincation in cassandra.
 
 ---
 
