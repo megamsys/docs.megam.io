@@ -12,7 +12,7 @@ At the start, install OpenJDK8 and cassandra for which the following are needed.
 | Operating System                        | Status                                                |
 |:-------------------------------------- :| :---------------------------------------------------- |
 | Ubuntu 14.04, 16.04, Debian 8.5         | Well tested                                           |
-| CentOS 7.2                              | Well tested, [report issues](https://github.com/megamsys/gitpackager){: target="_blank"} |
+| CentOS 7.2                              | Well tested
 
 
 ---
@@ -114,25 +114,11 @@ $ service cassandra restart
 
 ~~~
 
-Lets follow this link *http://docs.megam.io/configuration/vertice/#import-vertice-keyspace* to update Vertice keyspace & password authentincation in cassandra.
+Lets focus on update [Vertice](http://docs.megam.io/configuration/vertice/#import-vertice-keyspace) Keyspace & enable password authentication.
 
 ---
 
 ### Install OpenSource MegamVertice
-
-#### Ubuntu 14.04 Version 1.5
-
-~~~bash
-
-  sudo apt-add-repository "deb [arch=amd64] http://get.megam.io/repo/1.5/ubuntu/14.04/stable trusty stable"
-
-  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
-
-  sudo apt-get update
-
-  sudo apt-get install verticenilavu verticegateway nsqd vertice verticevnc
-
-~~~
 
 #### Ubuntu 14.04 Version 1.5.1
 
@@ -189,20 +175,6 @@ To stop MegamVertice then
   sudo sv stop nginx
 
   sudo sv stop unicorn
-
-~~~
-
-#### Ubuntu 16.04/Debian Jessie Version 1.5
-
-~~~bash
-
-  sudo apt-add-repository "deb [arch=amd64] https://get.megam.io/repo/1.5/ubuntu/16.04/stable xenial stable"
-
-  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
-
-  sudo apt-get update
-
-  sudo apt-get install verticenilavu verticegateway nsqd vertice verticevnc
 
 ~~~
 
@@ -287,22 +259,6 @@ $ sudo rpm -ivh ruby-2.3.1-1.el7.centos.x86_64.rpm
 $ curl -s https://packagecloud.io/install/repositories/imeyer/runit/script.rpm.sh | sudo bash
 
 $ sudo yum install -y runit-2.1.1-7.el7.centos.x86_64
-
-~~~
-
-~~~bash
-
-  cat << EOT > /etc/yum.repos.d/vertice.repo
-[vertice]
-name=vertice
-baseurl=https://get.megam.io/repo/1.5/centos/7.2/stable
-enabled=1
-gpgcheck=0
-EOT
-
-  sudo yum update
-
-  sudo yum install verticenilavu verticegateway nsqd vertice verticevnc
 
 ~~~
 
