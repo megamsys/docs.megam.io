@@ -70,6 +70,12 @@ collections:
     active_prefix: domains
     output: true
     order: 9
+  connectors:
+    title: Connectors
+    permalink: /connectors/:title/
+    active_prefix: connectors
+    output: true
+    order: 10
 
 defaults:
 - scope:
