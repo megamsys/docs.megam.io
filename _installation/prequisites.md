@@ -44,7 +44,7 @@ $ wget -O fedora_24.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/
 
 $ wget -O debian_8.5.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/debian.tar.gz
 
-$ wget -O centos_7.1.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/centos.tar.gz
+$ wget -O centos_7.2.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/centos.tar.gz
 
 $ wget -O dockermachine_1.12.img.tar.gz https://s3-ap-southeast-1.amazonaws.com/megampub/iso/dockermachine.tar.gz
 
@@ -66,8 +66,8 @@ mv fedora.img fedora_24.img
 $ tar -zxvf debian_8.5.img.tar.gz
 mv debian.img debian_8.5.img
 
-$ tar -zxvf centos_7.1.img.tar.gz
-mv centos.img centos_7.1.img
+$ tar -zxvf centos_7.2.img.tar.gz
+mv centos.img centos_7.2.img
 
 $ tar -zxvf dockermachine_1.12.img.tar.gz
 mv dockermachine.img dockermachine_1.12.img
