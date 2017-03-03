@@ -313,7 +313,7 @@ EOT
   cat << EOT > /etc/yum.repos.d/vertice.repo
 [vertice]
 name=vertice
-baseurl=https://get.megam.io/repo/1.5/centos/7.2/stable
+baseurl=https://get.megam.io/repo/1.5.1/centos/7.2/testing
 enabled=1
 gpgcheck=0
 EOT
