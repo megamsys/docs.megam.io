@@ -14,7 +14,7 @@ Configure */var/lib/megam/regions.yml* to modify the regions to allow an user to
 
 regions:
 # The name of the region to launch
-  sydney:
+  Sydney:
 # The flag of the region launched
     flag: '../../images/regions/au.png'
 # The billable currency of the region
@@ -31,17 +31,17 @@ regions:
     max_ram: '256 GB'
 # The maximum storage the region has.
     max_storage: '500 GB'
-# Minimum 3 flavors are needed.
-    flavors:
-# The different types of launch options a customer can choose
-      s1.micro: '1 GB,1 Core,24 GB'
-      s1.small: '2 GB,2 Cores,48 GB'
-      s1.medium: '3 GB,4 Cores,96 GB'
 # The available ip options for the region.
     private_ipv4: true
     public_ipv4: false
     private_ipv6: false
     public_ipv6: false
+# Minimum 3 flavors are needed.
+    flavors:
+# The different types of launch options a customer can choose
+    s1.micro: '1 GB,1 Core,24 GB,2 TB,10'
+    s1.small: '2 GB,2 Cores,48 GB,4 TB,20'
+    s1.medium: '3 GB,4 Cores,96 GB,6 TB,40'
 
 ~~~
 

@@ -40,24 +40,23 @@ Configure */var/lib/megam/vertice/vertice.conf*
       [deployd.one]
         enabled = true
         vcpu_percentage = "3"
+
           [[deployd.one.region]]
-            # region name, this has to be the same as the Region configuration.
-            one_zone = "chennai"
-            # opennebula endpoint
+            one_zone = "Chennai"
+            ond_datastore_id = "100"
             one_endpoint = "http://localhost:2633/RPC2"
             one_user     = "oneadmin"
             one_password = "onepass"
             one_template = "megam"
-            # Virtual machine uses 10% of 1 core (ie 1VCPU = (1Core/10))      
             vcpu_percentage = "10"
+            memory_unit  = "1024"  # basic unit to measure metrics (2048/memory_unit * memory_cost )
+            cpu_unit     = "1"
+            disk_unit    = "24576"
 
               [[deployd.one.region.cluster]]
                 enabled = true
-                #opennebula cluster
                 cluster_id = "101"
-                # storage type of node such hdd/ssd
-                storage_hddtype = "hdd"     
-                # opennebula virtual network configured
+                storage_hddtype = "hdd"     # storage type should be hdd/ssd
                 vnet_pri_ipv4   = "pri_ipv4"
                 vnet_pub_ipv4   = "pub2_ipv4"
                 vnet_pri_ipv6   = "pri_ipv6"
@@ -65,27 +64,31 @@ Configure */var/lib/megam/vertice/vertice.conf*
 
 
               [[deployd.one.region.cluster]]
-                enabled = true
+                enabled = false
                 cluster_id = "100"
-                storage_hddtype = "ssd"  
+                storage_hddtype = "hdd"     # storage type should be hdd/ssd
                 vnet_pri_ipv4   = "pri_ipv4-a"
                 vnet_pub_ipv4   = "pub_ipv4-a"
                 vnet_pri_ipv6   = "pri_ipv6-a"
                 vnet_pub_ipv6   = "pub_ipv6-a"
 
-           #one or more regions can be added
+
           [[deployd.one.region]]
-            one_zone = "sydney"
+            one_zone = "Sydney"
             one_endpoint = "http://127.0.0.1:2633/RPC2"
             one_user     = "oneadmin"
             one_password = "onepass"
             one_template = "megam"
             vcpu_percentage = "10"
+            memory_unit  = "1024"  # basic unit to measure metrics (2048/memory_unit * memory_cost )
+            cpu_unit     = "1"
+            disk_unit    = "10240"
 
               [[deployd.one.region.cluster]]
-                enabled = true
-                cluster_id = "103"
-                storage_hddtype = "ssd"
+                enabled = false
+                cluster_id = "100"
+                storage_hddtype = "hdd"     # storage type should be hdd/ssd
+                vonecloud = false
                 vnet_pri_ipv4   = "pri_ipv4-a"
                 vnet_pub_ipv4   = "pub_ipv4-a"
                 vnet_pri_ipv6   = "pri_ipv6-a"
@@ -93,12 +96,13 @@ Configure */var/lib/megam/vertice/vertice.conf*
 
 
               [[deployd.one.region.cluster]]
-                enabled = true
-                cluster_id = "104"
-                storage_hddtype = "hdd"
+                enabled = false
+                cluster_id = "101"
+                storage_hddtype = "hdd"     # storage type should be hdd/ssd
                 vnet_pri_ipv4   = "pri_ipv4-b"
                 vnet_pub_ipv4   = "pub_ipv4-b"
                 vnet_pri_ipv6   = "pri_ipv6-b"
                 vnet_pub_ipv6   = "pub_ipv6-b"
+
 
 ~~~

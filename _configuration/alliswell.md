@@ -12,12 +12,11 @@ Now that you have configured to your hearts content, its time to see if the `ind
 
 ### Console (UI - Nilavu)
 
-- https://localhost:3000
+- https://localhost
 
 You'll see a cool UI.
 
-The log files are located in */var/www/verticenilavu/log/unicorn.stdout.log
-
+The log files are located in */var/www/verticenilavu/log/unicorn.stdout.log, */var/www/verticenilavu/log/production.log
 
 ### API - gateway
 
@@ -55,12 +54,10 @@ The log files are located in */var/log/megam/vertice*
 
 #### *optional* Cassandra
 
-Please replace `192.168.0.116` with  your ip address.
-
 ~~~bash
 
-$ cqlsh <192.168.0.116> -u vertadmin -p vertadmin
-Connected to Test Cluster at 192.168.0.116:9042.
+$ cqlsh -u vertadmin -p vertadmin
+Connected to Test Cluster at 127.0.0.1:9042.
 [cqlsh 5.0.1 | Cassandra 3.7 | CQL spec 3.4.2 | Native protocol v4]
 Use HELP for help.
 vertadmin@cqlsh>
@@ -69,7 +66,7 @@ vertadmin@cqlsh>
 
 #### *optional* NSQ
 
-- http://localhost:7777
+- http://localhost:4171
 
 You'll see a web page.
 

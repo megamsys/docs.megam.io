@@ -40,10 +40,17 @@ Lets configure */var/lib/megam/vertice/vertice.conf*
     [docker.docker]
         enabled = true
         [[docker.docker.region]]
-          docker_zone = "chennai"
-          swarm = "tcp://192.168.0.121:2375"
+          docker_zone = "Chennai"
+          swarm = "tcp://localhost:2375" # Point your swarm ipaddress.
+          memory_unit  = "1024"  # basic unit to measure metrics (2048/memory_unit * memory_cost )
+          cpu_unit     = "1"
+          disk_unit    = "1024"
 
         [[docker.docker.region]]
-          docker_zone = "sydney"
+          docker_zone = "Sydney"
           swarm = "tcp://localhost:2375"
+          memory_unit  = "1024"  # basic unit to measure metrics (2048/memory_unit * memory_cost )
+          cpu_unit     = "1"
+          disk_unit    = "1024"
+
 ~~~

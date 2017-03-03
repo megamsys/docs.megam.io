@@ -53,6 +53,9 @@ http_api = http://localhost:9000/v2
 
 log_server = ws://localhost:7777/logs
 
+## shell is a host that the nilavu will connect to for container shell prombt
+shell_server = ws://localhost:7777
+
 ### vnc server that the UI will connect to.
 ## we need to turn on https, in such case replace it as wss
 
@@ -66,25 +69,22 @@ google_js_uri = http://www.google.com/jsapi?ext.js
 Configure */etc/nginx/sites-available/default*
 {: .info}
 
+- Replace your server_name.
+- uncomment SSL certificate to point your own SSL certificate.
+
 ~~~yaml
 
 ## change server_name to point your server_name
-server_name _;
+server_name console.megam.io;
 
-~~~
-
-Enable *HTTPS in Vertice*
-{: .info}
-
-##uncomment SSL certificate to point your own SSL certificate
-  ssl_certificate /etc/nginx/certs/cloud.atomdeploy.com.cer;
-  ssl_certificate_key /etc/nginx/private/cloud.atomdeploy.com.key;
+## To enable HTTPS - uncomment ssl certificate to point your own certificate.
+ssl_certificate /etc/nginx/certs/console.megam.io.cer;
+ssl_certificate_key /etc/nginx/private/console.megam.io.key;
 
 ~~~
 
 Configure */var/lib/megam/verticegateway/gateway.conf*
 {: .info}
-
 
 ~~~yaml
 
@@ -106,6 +106,7 @@ cassandra.use_ssl = false
 
 # We use NSQ as the messaging layer
 # ~~~~~
+# Replace localhost to NSQD ipaddress
 nsq.url="http://localhost:4151"
 
 # Don't change the nsq.topic names.
@@ -120,12 +121,9 @@ nsq.events.muted_emails = ["tour@megam.io"]
 
 ~~~
 
-Import *Vertice Keyspace in Cassandra*
-{: .info}
+####  Import Vertice Keyspace
 
-Update the keyspace in Cassandra
-
-To do this, download  the following cql files:
+- *Download following cql files*
 
 ~~~bash
 
@@ -135,11 +133,11 @@ wget -O enterprise.cql https://raw.githubusercontent.com/megamsys/verticegateway
 
 ~~~
 
+- Update base.cql file in cassandra
+
 ~~~bash
 
-Update base.cql file in cassandra. Change localhost to your private_ip
-
- cqlsh localhost -f base.cql
+ cqlsh -f base.cql
 
 ~~~
 
@@ -185,20 +183,18 @@ $ service cassandra restart
 
 ~~~
 
+- Upgrade cql file using cassandra credentials
+
 ~~~bash
 
-Upgrade the cql file using cassandra username and password. change localhost to your private_ip
+cqlsh -u vertadmin -p vertadmin -f upgrade.cql
 
-cqlsh localhost -u vertadmin -p vertadmin -f upgrade.cql
-
-cqlsh localhost -u vertadmin -p vertadmin -f enterprise.cql
+cqlsh -u vertadmin -p vertadmin -f enterprise.cql
 
 ~~~
 
-
 Configure */var/lib/megam/vertice/vertice.conf*
 {: .info}
-
 
 ~~~yaml
 
@@ -208,12 +204,10 @@ Configure */var/lib/megam/vertice/vertice.conf*
 ###
 ### Controls how vertice connects to scylla, nsq
 
-  [meta]
-    api = "https://localhost:9000/v2"
-    nsqd = ["localhost:4150"]
-    scylla = ["localhost"]
-    scylla_keyspace = "vertice"
-    scylla_username = "vertadmin"
-    scylla_password = "vertadmin"
+[meta]
+  api = "http://localhost:9000/v2"  #"Point Gateway ipaddress"
+  master_user = "info@megam.io"
+  master_key = "abcdefghijklmnopqrstuvwxyz,."
+  nsqd = ["localhost:4150"]        #"Point NSQD ipaddress"
 
 ~~~
