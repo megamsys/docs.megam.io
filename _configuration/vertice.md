@@ -121,6 +121,25 @@ nsq.events.muted_emails = ["tour@megam.io"]
 
 ~~~
 
+Configure */var/lib/megam/vertice/vertice.conf*
+{: .info}
+
+~~~yaml
+
+### Welcome to the vertice configuration file.
+###
+### [meta]
+###
+### Controls how vertice connects to scylla, nsq
+
+[meta]
+  api = "http://localhost:9000/v2"  #"Point Gateway ipaddress"
+  master_user = "info@megam.io"
+  master_key = "abcdefghijklmnopqrstuvwxyz,."
+  nsqd = ["localhost:4150"]        #"Point NSQD ipaddress"
+
+~~~
+
 ####  Import Vertice Keyspace
 
 - *Download following cql files*
@@ -190,24 +209,5 @@ $ service cassandra restart
 cqlsh -u vertadmin -p vertadmin -f upgrade.cql
 
 cqlsh -u vertadmin -p vertadmin -f enterprise.cql
-
-~~~
-
-Configure */var/lib/megam/vertice/vertice.conf*
-{: .info}
-
-~~~yaml
-
-### Welcome to the vertice configuration file.
-###
-### [meta]
-###
-### Controls how vertice connects to scylla, nsq
-
-[meta]
-  api = "http://localhost:9000/v2"  #"Point Gateway ipaddress"
-  master_user = "info@megam.io"
-  master_key = "abcdefghijklmnopqrstuvwxyz,."
-  nsqd = ["localhost:4150"]        #"Point NSQD ipaddress"
 
 ~~~
