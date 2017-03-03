@@ -1,3 +1,8 @@
+---
+title: Opennebula
+order: 1
+---
+
 You can setup OpenNebula backed by [ceph](http://ceph.com){: target="_blank"} or [lvm](https://wiki.ubuntu.com/Lvm){: target="_blank"} to store images.
 {: .info}
 

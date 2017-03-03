@@ -42,11 +42,11 @@ Recommended:
 | Storage Node                    | A storage node to power High Availability & Storage Solutions                                   | > 1                            |
 | Failover Node                   | A compute node that is on idle, it is utilized for high availability when a compute node fails. | > 1 for every 10 compute nodes |
 
-
+---
 
 ## Typical setup:
 
-You need at-least 2 servers to support compute, storage and containers. Please refer [Topology](http://docs.megam.io/gettingstarted/system_requirements/#lvm) section for more details.*
+You need at-least 2 servers to support compute, storage and containers. Please refer [Topology](http://docs.megam.io/gettingstarted/system_requirements/#topology ) section for more details.
 
 ## Hardware Requirements
 
@@ -94,6 +94,8 @@ Master is the server where MegamVertice is installed to manage the `compute` and
 
 Slave is the fallback node for the Master.
 
+---
+
 ## Standard Setup:
 
 Minimal Setup:
@@ -116,6 +118,8 @@ Recommended Setup:
 
 ^1: The purpose of a slave is to provide high availability for the VirtEngine UI & Software.
 ^2: The purpose of a failover node is to provide high availability to client VM's, for high availability to work please view the above requirements.
+
+---
 
 ## SAN Setup:
 
@@ -142,6 +146,8 @@ Recommended Setup (SAN):
 | Compute Node  | > 8/16        | > 64GB       | > 2xHDD (2TB) (or) 2xSSD (1TB)     |
 | Storage Node  | > 8           | > 16GB       | > 4xHDD (2TB) (or) 4xSSD (1TB)     |
 | Failover Node | > 8/16        | > 64GB       | > 2xHDD (2TB) (or) 2xSSD (1TB)     |
+
+---
 
 ### Topology
 
