@@ -29,17 +29,17 @@ permalink: /pricing
 
 |                                                 | VirtEngine Minified edition                             | VirtEngine Complete edition                                                             |
 | ----------------------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-|                                                 | ![Supported](images/tick.png)                           | ![Supported](images/tick.png)                                                           |
-| Cloud Virtual Machines                          | ![Supported](images/tick.png)                           | ![Supported](images/tick.png)                                                           |
-| One-Click Applications                          | ![Supported](images/tick.png)                           | ![Supported](images/tick.png)                                                           |
-| Extendable Platform                             | ![Supported](images/tick.png)                           | ![Supported](images/tick.png)                                                           |
-| Simple Storage Service (Block/Object)           | -                                                       | ![Supported](images/tick.png)                                                           |
+
+| Cloud Virtual Machines                          | ![Supported](img/tick.png)                           | ![Supported](img/tick.png)                                                           |
+| One-Click Applications                          | ![Supported](img/tick.png)                           | ![Supported](img/tick.png)                                                           |
+| Extendable Platform                             | ![Supported](img/tick.png)                           | ![Supported](img/tick.png)                                                           |
+| Simple Storage Service (Block/Object)           | -                                                       | ![Supported](img/tick.png)                                                           |
 | Elastic Virtual Machines                        | -                                                       | soon                                                                                    |
-| Cloud-Native Applications                       | -                                                       | ![Supported](images/tick.png)                                                           |
+| Cloud-Native Applications                       | -                                                       | ![Supported](img/tick.png)                                                           |
 | Automated Application Scaling (Load Balancing)  | -                                                       | soon                                                                                    |
-| Micro-Services Docker                           | -                                                       | ![Supported](images/tick.png)                                                           |
+| Micro-Services Docker                           | -                                                       | ![Supported](img/tick.png)                                                           |
 | Virtual Private Cloud                           | -                                                       | soon                                                                                    |
-| Customizable UI                                 | -                                                       | ![Supported](images/tick.png)                                                           |
+| Customizable UI                                 | -                                                       | ![Supported](img/tick.png)                                                           |
 | Increased Publicity & Sales                     | -                                                       | Offer Cloud Bursting - Mentioned in Providers Section - Integrated with 3rd party tools |
 | Layers of High Availability                     | Incremental Offshore Backups                            | Load Balancing - VM Replication on Failure - Incremental Offshore Backups               |
 | Software Delivery                               | SaaS (or)  On-Premise                                   | SaaS (or)  On-Premise                                                                   |

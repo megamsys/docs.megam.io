@@ -8,7 +8,9 @@ We assume that you have a working [OpenNebula](https://opennebula.org){: target=
 We support following connectors as service is easy with MegamVertice:
 
 1. Create Virtual Machine under [OpenNebula](/connectors/opennebula)
-2.To setup [swarm](/connectors/swarm) master a small VM can be suffice. [installation](/installation/prequisites/)
+
+2.To setup [swarm](/connectors/swarm) master a small VM can be suffice.
+
 3.To setup Rancher.
 
 For more details, vertify [System requirements](/gettingstarted/system_requirements/)
