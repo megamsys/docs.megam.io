@@ -69,8 +69,8 @@ mv debian.img debian_8.5.img
 $ tar -zxvf centos_7.1.img.tar.gz
 mv centos.img centos_7.1.img
 
-$ tar -zxvf dockermachine.1.12.img.tar.gz
-mv dockermachine.img dockermachine.1.12.img
+$ tar -zxvf dockermachine_1.12.img.tar.gz
+mv dockermachine.img dockermachine_1.12.img
 
 ~~~
 

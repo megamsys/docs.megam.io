@@ -106,30 +106,13 @@ $ sudo apt-get install datastax-ddc
 
 ~~~
 
-##### Enable access using *private_ip*
-
-Open the file */etc/cassandra/cassandra.yaml* in your favourite EDITOR.
-
-Lets use *nano*
-
-~~~bash
-
-$ nano  /etc/cassandra/cassandra.yaml
-
-~~~
-
-- Change *listen_address* to *private_ip*
-
-- Change *rpc_address* to *private_ip*
-
-- Change *seeds* to *private_ip*
-
-
 Restart the cassandra (in all operating systems)
 
 ~~~bash
 
 $ service cassandra restart
+
+Lets follow this link *http://docs.megam.io/configuration/vertice/#Import-Vertice-Keyspace* to update Vertice keyspace & password authentincation in cassandra.
 
 ~~~
 
@@ -137,11 +120,25 @@ $ service cassandra restart
 
 ### Install OpenSource MegamVertice
 
-#### Ubuntu 14.04
+#### Ubuntu 14.04 Version 1.5
 
 ~~~bash
 
   sudo apt-add-repository "deb [arch=amd64] http://get.megam.io/repo/1.5/ubuntu/14.04/stable trusty stable"
+
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
+
+  sudo apt-get update
+
+  sudo apt-get install verticenilavu verticegateway nsqd vertice verticevnc
+
+~~~
+
+#### Ubuntu 14.04 Version 1.5.1
+
+~~~bash
+
+  sudo apt-add-repository "deb [arch=amd64] http://get.megam.io/repo/1.5/ubuntu/14.04/testing trusty testing"
 
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
 
@@ -195,11 +192,25 @@ To stop MegamVertice then
 
 ~~~
 
-#### Ubuntu 16.04/Debian Jessie
+#### Ubuntu 16.04/Debian Jessie Version 1.5
 
 ~~~bash
 
   sudo apt-add-repository "deb [arch=amd64] https://get.megam.io/repo/1.5/ubuntu/16.04/stable xenial stable"
+
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
+
+  sudo apt-get update
+
+  sudo apt-get install verticenilavu verticegateway nsqd vertice verticevnc
+
+~~~
+
+#### Ubuntu 16.04/Debian Jessie Version 1.5.1
+
+~~~bash
+
+  sudo apt-add-repository "deb [arch=amd64] https://get.megam.io/repo/1.5/ubuntu/16.04/testing xenial testing"
 
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
 
@@ -254,7 +265,7 @@ To stop MegamVertice
 ~~~
 
 
-#### CentOS 7.2 *experimental*
+#### CentOS 7.2 Version 1.5
 
 At the start, install Ruby2.3 and Runit for VerticeNilavu.
 
@@ -278,6 +289,24 @@ $ curl -s https://packagecloud.io/install/repositories/imeyer/runit/script.rpm.s
 $ sudo yum install -y runit-2.1.1-7.el7.centos.x86_64
 
 ~~~
+
+~~~bash
+
+  cat << EOT > /etc/yum.repos.d/vertice.repo
+[vertice]
+name=vertice
+baseurl=https://get.megam.io/repo/1.5/centos/7.2/stable
+enabled=1
+gpgcheck=0
+EOT
+
+  sudo yum update
+
+  sudo yum install verticenilavu verticegateway nsqd vertice verticevnc
+
+~~~
+
+#### CentOS 7.2 Version 1.5.1
 
 ~~~bash
 
