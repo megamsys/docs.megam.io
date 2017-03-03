@@ -140,7 +140,7 @@ Configure */var/lib/megam/vertice/vertice.conf*
 
 ~~~
 
-####  Import Vertice Keyspace
+###  Import Vertice Keyspace
 
 - *Download following cql files*
 
