@@ -36,7 +36,7 @@ Recommended:
 | Application                     | Description                                                                                     | Quantity                       |
 | ------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------ |
 | Master                          | Hosts our Software Stack, such as our provisioning engine and front-end etc.                    | 1                              |
-| Slave                           | Slaves are additional nodes that host the VirtEngine software, they can be used to loadbalance the platofm or       | 1                              |
+| Slave                           | Slaves are additional nodes that host the Vertice software, they can be used to loadbalance the platofm or       | 1                              |
 | Compute Node - Virtual Machines | A compute node to host virtual machines                                                         | > 1                            |
 | Compute Node - Containers       | A compute node to host containers                                                               | > 1                            |
 | Storage Node                    | A storage node to power High Availability & Storage Solutions                                   | > 1                            |
@@ -116,7 +116,7 @@ Recommended Setup:
 | Compute/Storage Node | > 8/16        | > 64GB       | > 3xHDD (2TB) (or) 3xSSD (750GB)     |
 | Failover Node        | > 8/16        | > 64GB       | > 2xHDD (2TB) (or) 2xSSD (750GB)     |
 
-^1: The purpose of a slave is to provide high availability for the VirtEngine UI & Software.
+^1: The purpose of a slave is to provide high availability for the Vertice UI & Software.
 ^2: The purpose of a failover node is to provide high availability to client VM's, for high availability to work please view the above requirements.
 
 ---
