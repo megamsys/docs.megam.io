@@ -124,7 +124,7 @@ Lets focus on update [Vertice](http://docs.megam.io/configuration/vertice/#impor
 
 ~~~bash
 
-  sudo apt-add-repository "deb [arch=amd64] http://get.megam.io/repo/1.5/ubuntu/14.04/testing trusty testing"
+  sudo apt-add-repository "deb [arch=amd64] http://get.megam.io/repo/1.5.1/ubuntu/14.04/testing trusty testing"
 
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
 
@@ -182,7 +182,7 @@ To stop MegamVertice then
 
 ~~~bash
 
-  sudo apt-add-repository "deb [arch=amd64] https://get.megam.io/repo/1.5/ubuntu/16.04/testing xenial testing"
+  sudo apt-add-repository "deb [arch=amd64] https://get.megam.io/repo/1.5.1/ubuntu/16.04/testing xenial testing"
 
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
 
@@ -237,7 +237,7 @@ To stop MegamVertice
 ~~~
 
 
-#### CentOS 7.2 Version 1.5
+#### CentOS 7.2 Version 1.5.1
 
 At the start, install Ruby2.3 and Runit for VerticeNilavu.
 
@@ -262,7 +262,7 @@ $ sudo yum install -y runit-2.1.1-7.el7.centos.x86_64
 
 ~~~
 
-#### CentOS 7.2 Version 1.5.1
+#### MegamVertice Packages
 
 ~~~bash
 
