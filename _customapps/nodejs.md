@@ -29,26 +29,42 @@ If you don't have an id, then type these `Public repo url` in the text box.
 
 Choose your Github repository.
 
-### Adding a build script. *optional*
+### Adding a Procfile. *optional*
 
-The *build script* is used to install additional build steps in the launched application that is deemed fit for your launched app.
+The *Procfile*  is a mechanism for declaring what commands are run by your application that is used to install additional build steps in the launched application that is deemed fit for your launched app.
 
-For your convenience the sample public repos has baked in build scripts as needed.
+Procfile is used to maintain a start your application.
 
-The build script needs to be named as *build* and shall reside under the parent root directory.
+For your convenience the sample public repos has baked in Procfile as needed.
 
-Now that you have chosen the git repo, [Go to step3 to launch](/customapps/deploying).
-
-### Adding a start script. *optional*
-
-The *start script* is used to install additional start steps in the launched application that is deemed fit for your launched app.
-
-For your convenience the sample public repos has baked in build scripts as needed.
-
-The build script needs to be named as *build* and shall reside under the parent root directory.
+The *Procfile*  resides under the parent root directory.
 
 Now that you have chosen the git repo, [Go to step3 to launch](/customapps/deploying).
 
+For example,The Procfile is added in [verticeapps/etherpad-lite](https://github.com/verticeapps/etherpad-lite.git){: target="_blank"}
+
+```
+
+  web: sh bin/run.sh --root
+
+
+```
+
+The Procfile is added in [verticeapps/node_hexo](https://github.com/verticeapps/node_hexo.git){: target="_blank"}
+
+```
+
+web: sh -c 'cd bin ; ./hexo init blog ; cd blog ; npm install ; ../hexo server'
+
+```
+
+The Procfile is added in [verticeapps/node_c9](https://github.com/verticeapps/node_c9.git){: target="_blank"}
+
+```
+
+web: sh -c 'scripts/install-sdk.sh ; node server.js --listen 0.0.0.0 -a vmusername:vmpassword --port 8181'
+
+```
 
 ### Working with Node App code *optional*
 
