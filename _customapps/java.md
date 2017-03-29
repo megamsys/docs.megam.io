@@ -19,7 +19,7 @@ There are 2 ways to launch.
 
 If you don't have an id, then type these `Public repo url` in the text box.
 
-[https://github.com/verticeapps/java_jenkins.git](https:/github.com/verticeapps/java_jenkins.git){: target="_blank"}
+[https://github.com/verticeapps/java_petclinic.git](https://github.com/verticeapps/java_petclinic.git){: target="_blank"}
 
 [https://github.com/verticeapps/java_springwebflow.git](https://github.com/verticeapps/java_springwebflow.git){: target="_blank"}
 
@@ -30,15 +30,27 @@ If you don't have an id, then type these `Public repo url` in the text box.
 
 Choose your Github repository.
 
-### Adding a build script. *optional*
+### Adding a Procfile. *optional*
 
-The *build script* is used to install additional dependencies in the launched application which can contain shell scripts.
+The *Procfile*  is a mechanism for declaring what commands are run by your application that is used to install additional build steps in the launched application that is deemed fit for your launched app.
 
-For your convenience the sample public repos has baked in build scripts as needed.
+Procfile is used to maintain a start your application.
 
-The build script needs to be named as *build* and shall reside under the parent root directory.
+For your convenience the sample public repos has baked in Procfile as needed.
+
+The *Procfile*  resides under the parent root directory.
 
 Now that you have chosen the git repo, [Go to step3 to launch](/customapps/deploying).
+
+For example,The Procfile is added in [verticeapps/java_petclinic](https://github.com/verticeapps/java_petclinic.git){: target="_blank"}
+
+```
+
+  web: sh -c 'systemctl start tomcat'
+
+
+```
+This Procfile content is same for all java application.
 
 ### Working with Java App code *optional*
 
