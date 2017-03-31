@@ -65,7 +65,7 @@ To make changes in the code [verticeapps/scala_fiddle.git](https://github.com/ve
 
 ```
 
- cd scala_fiddle.git
+ cd scala_fiddle
 
 ```
 
@@ -76,7 +76,7 @@ Once you are done testing the changes, push the changes to Github.
 
 ```shell
 
-cd scala_fiddle.git
+cd scala_fiddle
 
 git push master
 Username for 'https://github.com': verticeuser
