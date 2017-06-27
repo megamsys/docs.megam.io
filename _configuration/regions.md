@@ -39,9 +39,8 @@ regions:
 # Minimum 3 flavors are needed.
     flavors:
 # The different types of launch options a customer can choose
-    s1.micro: '1 GB,1 Core,24 GB,2 TB,10'
-    s1.small: '2 GB,2 Cores,48 GB,4 TB,20'
-    s1.medium: '3 GB,4 Cores,96 GB,6 TB,40'
+From begining there is no Active Flavors displayed on Lauche Page.
+Admin can create Flavors from Vertice Admin panel. 
 
 ~~~
 

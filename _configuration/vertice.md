@@ -135,7 +135,7 @@ Configure */var/lib/megam/vertice/vertice.conf*
 [meta]
   api = "http://localhost:9000/v2"  #"Point Gateway ipaddress"
   master_user = "info@megam.io"
-  master_key = "abcdefghijklmnopqrstuvwxyz,."
+  master_key = "abcdefghijklmnopqrstuvwxyz,." #"Replace master_key"
   nsqd = ["localhost:4150"]        #"Point NSQD ipaddress"
 
 ~~~
@@ -146,9 +146,11 @@ Configure */var/lib/megam/vertice/vertice.conf*
 
 ~~~bash
 
-wget -O base.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5/db/base.cql
-wget -O upgrade.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5/db/1.5.cql
-wget -O enterprise.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5/db/ee.cql
+wget -O base.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5.2/db/base.cql
+wget -O upgrade_1.5.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5.2/db/1.5.cql
+wget -O upgrade_1.5.1.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5.2/db/1.5.1.cql
+wget -O upgrade_1.5.2.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5.2/db/1.5.2.cql
+wget -O enterprise.cql https://raw.githubusercontent.com/megamsys/verticegateway/1.5.2/db/ee.cql
 
 ~~~
 
@@ -206,7 +208,11 @@ $ service cassandra restart
 
 ~~~bash
 
-cqlsh -u vertadmin -p vertadmin -f upgrade.cql
+cqlsh -u vertadmin -p vertadmin -f upgrade_1.5.cql
+
+cqlsh -u vertadmin -p vertadmin -f upgrade_1.5.1.cql
+
+cqlsh -u vertadmin -p vertadmin -f upgrade_1.5.2.cql
 
 cqlsh -u vertadmin -p vertadmin -f enterprise.cql
 
