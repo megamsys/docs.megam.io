@@ -79,9 +79,9 @@ $ rpm -ivh jdk-8u45-linux-x64.rpm
 
 ~~~  
 
-#### Cassandra 3.7
+#### Cassandra 3.9
 
-Install cassandra 3.7 by following the link for your operating system.
+Install cassandra 3.9 by following the link for your operating system.
 
 
 | Operating System             | Link                                                                                        |
@@ -92,11 +92,11 @@ Install cassandra 3.7 by following the link for your operating system.
 
 ##### Ubuntu 14.04
 
-In case you find issues in installing cassandra 3.7 in *Ubuntu 14.04*, follow the instructions given below:
+In case you find issues in installing cassandra 3.9 in *Ubuntu 14.04*, follow the instructions given below:
 
 ~~~bash
 
-$ sudo echo "deb http://debian.datastax.com/datastax-ddc 3.7 main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+$ sudo echo "deb http://debian.datastax.com/datastax-ddc 3.9 main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
 
 $ sudo curl -L https://debian.datastax.com/debian/repo_key | sudo apt-key add -
 
@@ -120,17 +120,21 @@ Lets focus on update [Vertice](http://docs.megam.io/configuration/vertice/#impor
 
 ### Install OpenSource MegamVertice
 
-#### Ubuntu 14.04 Version 1.5.1
+#### Ubuntu 14.04 Version 1.5.2
 
 ~~~bash
 
-  sudo apt-add-repository "deb [arch=amd64] http://get.megam.io/repo/1.5.1/ubuntu/14.04/testing trusty testing"
+  sudo apt-add-repository "deb [arch=amd64] http://get.megam.io/repo/1.5.2/ubuntu/14.04/testing trusty testing"
 
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
 
   sudo apt-get update
 
   sudo apt-get install verticenilavu verticegateway nsqd vertice verticevnc
+
+~~~
+
+Lets focus on Configure [Vertice](http://docs.megam.io/configuration/vertice/) Packages.
 
 ~~~
 
@@ -178,17 +182,21 @@ To stop MegamVertice then
 
 ~~~
 
-#### Ubuntu 16.04/Debian Jessie Version 1.5.1
+#### Ubuntu 16.04/Debian Jessie Version 1.5.2
 
 ~~~bash
 
-  sudo apt-add-repository "deb [arch=amd64] https://get.megam.io/repo/1.5.1/ubuntu/16.04/testing xenial testing"
+  sudo apt-add-repository "deb [arch=amd64] https://get.megam.io/repo/1.5.2/ubuntu/16.04/testing xenial testing"
 
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9B46B611
 
   sudo apt-get update
 
   sudo apt-get install verticenilavu verticegateway nsqd vertice verticevnc
+
+~~~
+
+Lets focus on Configure [Vertice](http://docs.megam.io/configuration/vertice/) Packages.
 
 ~~~
 
@@ -236,8 +244,7 @@ To stop MegamVertice
 
 ~~~
 
-
-#### CentOS 7.2 Version 1.5.1
+#### CentOS 7.2 Version 1.5.2
 
 At the start, install Ruby2.3 and Runit for VerticeNilavu.
 
@@ -269,7 +276,7 @@ $ sudo yum install -y runit-2.1.1-7.el7.centos.x86_64
   cat << EOT > /etc/yum.repos.d/vertice.repo
 [vertice]
 name=vertice
-baseurl=https://get.megam.io/repo/1.5.1/centos/7.2/testing
+baseurl=https://get.megam.io/repo/1.5.2/centos/7.2/testing
 enabled=1
 gpgcheck=0
 EOT
@@ -277,6 +284,10 @@ EOT
   sudo yum update
 
   sudo yum install verticenilavu verticegateway nsqd vertice verticevnc
+
+~~~
+
+Lets focus on Configure [Vertice](http://docs.megam.io/configuration/vertice/) Packages.
 
 ~~~
 
