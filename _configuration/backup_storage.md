@@ -16,9 +16,8 @@ MegamVertice  provides service to upload and download backup by using s3 compati
 
 1. Minio  supports  NFS. Hence we will use our data store mount point eg: **/mnt/S18TB6HDD/virtual**
 
-2.Create the directory like /usr/share/megam/minio
+2.Create the directory like **/usr/share/megam/minio**
 
-3.Download the minio binary from the [link] (https://github.com/minio/minio/blob/master/README.md) in /usr/share/megam/minio directory
 
 ```
 $ cd /usr/share/megam/minio
@@ -49,7 +48,7 @@ After=runlevel3.target
 After=runlevel4.target
 After=runlevel5.target
 [Service]
-ExecStart=/usr/share/detio/minio/minio server --address 188.240.231.84:8085 /mnt/S18TB6HDD/virtual KillMode=process
+ExecStart=/usr/share/detio/minio/minio server --address 127.0.0.1:8085 /mnt/S18TB6HDD/virtual KillMode=process
 
 ```
 
@@ -94,7 +93,7 @@ $ nano site_settings.yml
  minio_signature_version: 'v4'
  minio_bucket: 'virtual'
 
- ```
+```
 
 * The minio_bucket name will be the last directory in **/mnt/S18TB6HDD/virtual**.
 In our case its *virtual*
@@ -104,16 +103,16 @@ In our case its *virtual*
 Copy the below file into **/etc/nginx/sites-available**
 
 
- ```
+```
 $ systemctl daemon-reload
 
 $ systemctl stop nginx
 
 $ systemctl start nginx
 
- ```
+```
 
- ## Restart Nilavu
+## Restart Nilavu
 
 ```
 $ systemctl stop verticenilavu
