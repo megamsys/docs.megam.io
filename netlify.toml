@@ -1,0 +1,26 @@
+# Netlify config — Next.js 16 site, deployed via the official runtime.
+# Netlify auto-detects Next.js and installs @netlify/plugin-nextjs at build time;
+# declaring it explicitly pins the contract.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+  NPM_FLAGS = "--no-audit --no-fund"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Static asset cache — fingerprinted Next.js build output is immutable.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

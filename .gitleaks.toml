@@ -1,0 +1,10 @@
+[allowlist]
+description = "Project-specific non-secret allowlist"
+paths = [
+  '''^\.git/''',
+  '''^\.next/''',
+  '''^node_modules/''',
+  '''^playwright-report/''',
+  '''^test-results/''',
+  '''^public/img/'''
+]
