@@ -55,8 +55,8 @@ tests/e2e/                # Playwright smoke + banner + dead-link tests
 .github/workflows/
   ci.yml                  # lint + build + e2e on PR + push
   gitleaks.yml            # secret scan on PR + push
-  deploy.yml              # Netlify deploy on push to master
-netlify.toml              # build config + cache headers
+netlify.toml              # build config + cache headers (Netlify's GitHub
+                          # App auto-deploys master; no GitHub Action needed)
 .gitleaks.toml            # allowlist for non-secret matches
 ```
 
@@ -70,12 +70,12 @@ indexers.
 
 ## Deployment
 
-`master` deploys to Netlify via `.github/workflows/deploy.yml`. The workflow
-loads `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID` from 1Password using the same
-service-account pattern as `www.megam.io`.
+The Netlify GitHub App is linked to this repo and auto-deploys every push to
+`master` using the build settings in `netlify.toml`. No GitHub Action handles
+deploy — that would race the platform-native build.
 
-DNS for `docs.megam.io` is handled separately — flip the CNAME after the first
-successful Netlify deploy.
+CI (`ci.yml`) and `gitleaks.yml` still run on every PR and push as
+independent quality gates; Netlify's deploy proceeds in parallel.
 
 ## Migration notes
 
