@@ -1,2 +1,18 @@
-_site/
-.sass-cache/
+node_modules/
+.next/
+.netlify/
+out/
+
+# Test artifacts
+playwright-report/
+test-results/
+
+# Editor / OS
+.DS_Store
+*.log
+.env
+.env.local
+.env.*.local
+
+# TypeScript build info
+*.tsbuildinfo
