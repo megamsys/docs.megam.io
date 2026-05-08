@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap");
+
 :root {
   --canvas: #0a0a0f;
   --canvas-elevated: #11131a;
@@ -5,27 +8,24 @@
   --text-secondary: rgba(255, 255, 255, 0.6);
   --text-muted: rgba(255, 255, 255, 0.45);
   --accent-cyan: #00e5ff;
-  --accent-green: #a6ff00;
-  --accent-magenta: #ff2d95;
   --accent-warn: #ffb000;
   --accent-primary: var(--accent-cyan);
-  --accent-secondary: var(--accent-magenta);
   --glow-primary: 0 0 32px rgba(0, 229, 255, 0.35);
-  --glow-strong: 0 0 48px rgba(0, 229, 255, 0.5);
   --rule-faint: rgba(0, 229, 255, 0.2);
   --rule-strong: rgba(0, 229, 255, 0.6);
-  --font-display: "Space Grotesk", system-ui, sans-serif;
-  --font-body: Inter, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "General Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
   --size-hero: clamp(40px, 6vw, 88px);
   --size-h1: clamp(32px, 4vw, 56px);
   --size-h2: clamp(24px, 2.5vw, 36px);
   --size-h3: clamp(20px, 2vw, 28px);
+  --size-h4: clamp(17px, 1.5vw, 22px);
   --size-body: clamp(15px, 1.1vw, 18px);
   --size-small: clamp(13px, 0.9vw, 14px);
   --size-meta: 12px;
-  --tracking-hero: -0.04em;
-  --tracking-h1: -0.02em;
+  --tracking-hero: -0.02em;
+  --tracking-h1: -0.015em;
   --tracking-body: 0;
   --tracking-meta: 0.12em;
   --leading-tight: 1.05;
@@ -53,7 +53,7 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 42% 16%, rgba(0, 229, 255, 0.12), transparent 34rem),
+    radial-gradient(circle at 42% 16%, rgba(0, 229, 255, 0.04), transparent 34rem),
     var(--canvas);
   background-color: var(--canvas);
   color: var(--text-primary);
@@ -89,6 +89,9 @@ a {
 a:hover {
   color: var(--accent-primary);
   text-decoration-color: var(--accent-primary);
+}
+
+.glow-link:hover {
   text-shadow: var(--glow-primary);
 }
 
@@ -273,7 +276,7 @@ a:focus-visible {
 
 .content-page h4 {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: var(--size-h4);
   margin: 24px 0 8px;
   color: var(--text-secondary);
 }
@@ -298,7 +301,6 @@ a:focus-visible {
   font-size: 0.9em;
   background: var(--canvas-elevated);
   padding: 2px 6px;
-  border-radius: 3px;
   border: 1px solid var(--rule-faint);
 }
 
