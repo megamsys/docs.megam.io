@@ -16,3 +16,8 @@ test-results/
 
 # TypeScript build info
 *.tsbuildinfo
+
+# Agent rule symlinks (point into ~/Projects/dotfiles)
+/AGENTS.md
+/AGENTS_INVARIANCE.md
+/docs/
